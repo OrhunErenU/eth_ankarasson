@@ -13,31 +13,31 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Can Yilmaz',
-    role: 'Event Lead',
-    image: '/team-1.jpg',
+    name: '',
+    role: '',
+    image: '',
     twitter: 'https://twitter.com',
     github: 'https://github.com',
     linkedin: 'https://linkedin.com',
   },
   {
-    name: 'Zeynep Kaya',
-    role: 'Operations',
-    image: '/team-2.jpg',
-    twitter: 'https://twitter.com',
-    linkedin: 'https://linkedin.com',
+    name: '',
+    role: '',
+    image: '',
+    twitter: '',
+    linkedin: '',
   },
   {
-    name: 'Emre Demir',
-    role: 'Technical Lead',
-    image: '/team-3.jpg',
+    name: '',
+    role: '',
+    image: '',
     github: 'https://github.com',
     linkedin: 'https://linkedin.com',
   },
   {
-    name: 'Ada Sahin',
-    role: 'Marketing',
-    image: '/team-4.jpg',
+    name: '',
+    role: '',
+    image: '',
     twitter: 'https://twitter.com',
     linkedin: 'https://linkedin.com',
   },
@@ -99,7 +99,7 @@ export default function Team() {
           <a href="/" className="text-white font-semibold text-lg tracking-wider">
             ETH ANKARA
           </a>
-          <a href="/" className="text-white/50 hover:text-white transition-colors inline-flex items-center gap-2 text-sm">
+          <a href="#/" className="text-white/50 hover:text-white transition-colors inline-flex items-center gap-2 text-sm">
             <ArrowLeft size={16} />
             Back to home
           </a>
@@ -158,7 +158,7 @@ export default function Team() {
       <footer className="py-8 px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-white/30 text-sm">
           <p>© 2026 ETH ANKARA. All rights reserved.</p>
-          <a href="/" className="hover:text-white transition-colors">
+          <a href="#/" className="hover:text-white transition-colors">
             Back to home
           </a>
         </div>

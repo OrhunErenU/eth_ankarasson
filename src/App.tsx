@@ -24,7 +24,7 @@ function PageLoader({ onComplete }: { onComplete: () => void }) {
           transition={{ duration: 0.5 }}
           className="mb-8"
         >
-          <img src="/eth-ankara-logo.png" alt="ETH ANKARA" className="w-36 h-36 mx-auto" />
+          <img src="/logo.png" alt="ETH ANKARA" className="max-w-[120px] md:max-w-[140px] max-h-[120px] md:max-h-[140px] w-auto h-auto mx-auto object-contain" />
         </motion.div>
         
         <motion.h1
@@ -66,7 +66,7 @@ function Navigation() {
     { label: 'Speakers', href: '#speakers' },
     { label: 'Schedule', href: '#schedule' },
     { label: 'Sponsors', href: '#sponsors' },
-    { label: 'Team', href: '/team' },
+    { label: 'Team', href: '#/team' },
   ];
 
   const scrollToSection = (href: string) => {
@@ -142,18 +142,23 @@ function HeroSection() {
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#3d4852]">
       <div className="absolute inset-0">
-        <img src="/hero-ankara-new.png" alt="" className="w-full h-full object-cover opacity-80" />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3d4852]/40 via-transparent to-[#3d4852]" />
+        <img 
+          src="/hero-ankara-new.png" 
+          alt="" 
+          className="w-full h-full object-cover object-center opacity-80" 
+          style={{ objectPosition: 'center 30%' }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3d4852]/60 via-[#3d4852]/30 to-[#3d4852]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-24">
+      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20 md:pt-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8"
+          className="mb-6 md:mb-8"
         >
-          <img src="/eth-ankara-logo.png" alt="ETH ANKARA" className="w-48 h-48 mx-auto mb-6" />
+          <img src="/logo.png" alt="ETH ANKARA" className="max-w-[180px] md:max-w-[220px] max-h-[180px] md:max-h-[220px] w-auto h-auto mx-auto mb-4 md:mb-6 object-contain" />
         </motion.div>
 
         <motion.h1
@@ -165,13 +170,14 @@ function HeroSection() {
           ETH ANKARA
         </motion.h1>
 
+        {/* Produced by TEDÜ Blockchain */}
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="text-sm text-white/40 tracking-widest uppercase mb-6"
+          className="text-xs text-white/40 mb-6 text-right max-w-md mx-auto"
         >
-          Produced by TEDÜ Blockchain
+          Produced by <span className="text-cyan-400">TEDÜ Blockchain</span>
         </motion.p>
 
         <motion.p
@@ -180,7 +186,7 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl text-white/70 mb-4"
         >
-          May 23-24, 2026 — Ankara, Turkey
+          May 23-24, 2026  Ankara, Türkiye
         </motion.p>
 
         <motion.p
@@ -189,8 +195,8 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.7 }}
           className="text-lg text-white/50 max-w-2xl mx-auto mb-10"
         >
-          Turkey's premier Ethereum hackathon and community gathering. 
-          Two days of building, learning, and connecting in the heart of Anatolia.
+          Türkiye's premier Ethereum hackathon and community gathering. 
+          Two days of building, learning, and connecting in the heart of Türkiye.
         </motion.p>
 
         <motion.div
@@ -214,20 +220,21 @@ function HeroSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
-          className="flex flex-wrap justify-center gap-12 mt-16"
+          className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 md:mt-16"
         >
           {[
-            { value: '500+', label: 'Hackers' },
-            { value: 'TBA', label: 'Prizes' },
-            { value: '20+', label: 'Speakers' },
+            { value: '', label: 'Hackers' },
+            { value: '', label: 'Prizes' },
+            { value: '', label: 'Speakers' },
             { value: '48h', label: 'Of Building' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
-              <div className="text-3xl font-bold text-white">{stat.value}</div>
-              <div className="text-sm text-white/50">{stat.label}</div>
+              <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
+              <div className="text-xs md:text-sm text-white/50">{stat.label}</div>
             </div>
           ))}
         </motion.div>
+
       </div>
     </section>
   );
@@ -257,7 +264,7 @@ function AboutSection() {
             Where Ethereum meets Anatolia
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-8">
-            ETH Ankara is more than a hackathon — it's a celebration of the Ethereum community in Turkey. 
+            ETH Ankara is more than a hackathon, it's a celebration of the Ethereum community in Türkiye. 
             Join us for two days of intense building, inspiring talks, and meaningful connections.
           </p>
           <p className="text-white/60 text-lg leading-relaxed">
@@ -297,14 +304,14 @@ function HackathonSection() {
               Build the future
             </h2>
             <p className="text-white/60 text-lg mb-8 leading-relaxed">
-              48 hours to bring your ideas to life. Smart contracts, dApps, DeFi protocols — 
+              48 hours to bring your ideas to life. Smart contracts, dApps, DeFi protocols 
               build whatever you can imagine with mentorship from industry experts.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <div className="text-2xl font-bold text-white mb-1">Yakında Duyurulacak</div>
-                <div className="text-white/50">Ödül Havuzu</div>
+                <div className="text-3xl font-bold text-white mb-1">$25,000</div>
+                <div className="text-white/50">Prize Pool</div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-white mb-1">48h</div>
@@ -429,8 +436,8 @@ function ScheduleSection() {
 
           <div className="flex justify-center gap-4 mb-8">
             {[
-              { day: 1, label: 'Day 1 — May 23' },
-              { day: 2, label: 'Day 2 — May 24' },
+              { day: 1, label: 'Day 1 :May 23' },
+              { day: 2, label: 'Day 2 :May 24' },
             ].map(({ day, label }) => (
               <button
                 key={day}
@@ -497,14 +504,14 @@ function SponsorsSection() {
             Partner with us
           </h2>
           <p className="text-white/60 text-lg mb-12">
-            Join leading protocols and organizations in supporting the Ethereum ecosystem in Turkey.
+            Join leading protocols and organizations in supporting the Ethereum ecosystem in Türkiye.
           </p>
 
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {[
-              { name: 'Platinum', spots: 3 },
-              { name: 'Gold', spots: 5 },
-              { name: 'Silver', spots: 8 },
+              { name: 'Platinum', spots:  },
+              { name: 'Gold', spots:  },
+              { name: 'Silver', spots:  },
             ].map((tier) => (
               <div key={tier.name} className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">{tier.spots}</div>
@@ -525,7 +532,7 @@ function SponsorsSection() {
           <DialogHeader>
             <DialogTitle className="text-white">Sponsorship</DialogTitle>
             <DialogDescription className="text-white/50">
-              Bize ulaşın: blockchain@tedu.edu.tr
+              Contact us at blockchain@tedu.edu.tr
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
@@ -562,14 +569,29 @@ function TicketsSection() {
             Early bird tickets available soon. Student discounts available.
           </p>
 
-          <div className="flex flex-col items-center gap-4 justify-center">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white/70 font-medium rounded-md">
-              <Clock size={18} />
-              Bilet satışları yakında duyurulacak
-            </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button onClick={() => setDialogOpen(true)} 
+              className="px-8 py-3.5 bg-white text-[#4a5568] font-medium rounded-md hover:bg-white/90 transition-colors">
+              Early Bird Ticket
+            </button>
+            <button onClick={() => setDialogOpen(true)} 
+              className="px-8 py-3.5 border border-white/30 text-white font-medium rounded-md hover:bg-white/10 transition-colors">
+              Student Ticket
+            </button>
           </div>
         </motion.div>
       </div>
+
+      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+        <DialogContent className="bg-[#4a5568] border-0">
+          <DialogHeader>
+            <DialogTitle className="text-white">Tickets Coming Soon</DialogTitle>
+            <DialogDescription className="text-white/50">
+              Follow us on Twitter and Telegram for updates.
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }
@@ -636,7 +658,7 @@ function Footer() {
               <a href="mailto:blockchain@tedu.edu.tr" className="block text-white/50 hover:text-cyan-400 transition-colors">
                 blockchain@tedu.edu.tr
               </a>
-              <a href="https://x.com/ethankaraxyz" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
+              <a href="https://twitter.com/ethankaraxyz" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
                 Twitter / X
               </a>
               <a href="https://t.me/ethankara" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
