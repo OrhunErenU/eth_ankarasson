@@ -89,7 +89,7 @@ function Navigation() {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => link.href.startsWith('/') ? window.location.href = link.href : scrollToSection(link.href)}
+                onClick={() => link.href.startsWith('#/') ? window.location.href = link.href : scrollToSection(link.href)}
                 className="text-sm text-white/60 hover:text-white transition-colors"
               >
                 {link.label}
@@ -118,7 +118,7 @@ function Navigation() {
             {navLinks.map((link) => (
               <button
                 key={link.label}
-                onClick={() => link.href.startsWith('/') ? window.location.href = link.href : scrollToSection(link.href)}
+                onClick={() => link.href.startsWith('#/') ? window.location.href = link.href : scrollToSection(link.href)}
                 className="text-left text-lg text-white/60 hover:text-white transition-colors py-2"
               >
                 {link.label}

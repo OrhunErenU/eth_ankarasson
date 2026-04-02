@@ -13,33 +13,26 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: '',
-    role: '',
+    name: 'Orhun Eren',
+    role: 'Organizer',
     image: '',
-    twitter: 'https://twitter.com',
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    twitter: 'https://x.com/ethankaraxyz',
+    github: 'https://github.com/OrhunErenU',
   },
   {
-    name: '',
-    role: '',
+    name: 'Team Member',
+    role: 'Coordinator',
     image: '',
-    twitter: '',
-    linkedin: '',
   },
   {
-    name: '',
-    role: '',
+    name: 'Team Member',
+    role: 'Developer',
     image: '',
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
   },
   {
-    name: '',
-    role: '',
+    name: 'Team Member',
+    role: 'Designer',
     image: '',
-    twitter: 'https://twitter.com',
-    linkedin: 'https://linkedin.com',
   },
 ];
 
@@ -96,7 +89,7 @@ export default function Team() {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#3d4852]/95 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex items-center justify-between">
-          <a href="/" className="text-white font-semibold text-lg tracking-wider">
+          <a href="#/" className="text-white font-semibold text-lg tracking-wider">
             ETH ANKARA
           </a>
           <a href="#/" className="text-white/50 hover:text-white transition-colors inline-flex items-center gap-2 text-sm">
@@ -129,7 +122,7 @@ export default function Team() {
         {/* Team Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20">
           {teamMembers.map((member, index) => (
-            <TeamMemberCard key={member.name} member={member} index={index} />
+            <TeamMemberCard key={member.name + index} member={member} index={index} />
           ))}
         </div>
 
@@ -147,7 +140,7 @@ export default function Team() {
             <p className="text-white/50 mb-8">
               We're always looking for passionate volunteers to help make ETH ANKARA unforgettable.
             </p>
-            <a href="mailto:hello@ethankara.xyz" className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-[#3d4852] font-medium rounded-md hover:bg-white/90 transition-colors">
+            <a href="mailto:blockchain@tedu.edu.tr" className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-[#3d4852] font-medium rounded-md hover:bg-white/90 transition-colors">
               Get in touch
             </a>
           </div>
