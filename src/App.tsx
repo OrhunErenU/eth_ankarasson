@@ -223,9 +223,9 @@ function HeroSection() {
           className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 md:mt-16"
         >
           {[
-            { value: '', label: 'Hackers' },
-            { value: '', label: 'Prizes' },
-            { value: '', label: 'Speakers' },
+            { value: 'TBA', label: 'Hackers' },
+            { value: 'TBA', label: 'Prizes' },
+            { value: 'TBA', label: 'Speakers' },
             { value: '48h', label: 'Of Building' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
@@ -310,7 +310,7 @@ function HackathonSection() {
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <div className="text-3xl font-bold text-white mb-1">$25,000</div>
+                <div className="text-3xl font-bold text-white mb-1">$TBA</div>
                 <div className="text-white/50">Prize Pool</div>
               </div>
               <div>
@@ -436,8 +436,8 @@ function ScheduleSection() {
 
           <div className="flex justify-center gap-4 mb-8">
             {[
-              { day: 1, label: 'Day 1 :May 23' },
-              { day: 2, label: 'Day 2 :May 24' },
+              { day: 1, label: 'Day 1  May 23' },
+              { day: 2, label: 'Day 2  May 24' },
             ].map(({ day, label }) => (
               <button
                 key={day}
@@ -509,9 +509,9 @@ function SponsorsSection() {
 
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {[
-              { name: 'Platinum', spots: 3 },
-              { name: 'Gold', spots: 5 },
-              { name: 'Silver', spots: 8 },
+              { name: 'Platinum', spots: TBA },
+              { name: 'Gold', spots: TBA },
+              { name: 'Silver', spots: TBA },
             ].map((tier) => (
               <div key={tier.name} className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">{tier.spots}</div>
