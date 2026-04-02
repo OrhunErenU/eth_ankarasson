@@ -509,9 +509,9 @@ function SponsorsSection() {
 
           <div className="flex flex-wrap justify-center gap-8 mb-12">
             {[
-              { name: 'Platinum', spots:  },
-              { name: 'Gold', spots:  },
-              { name: 'Silver', spots:  },
+              { name: 'Platinum', spots: 3 },
+              { name: 'Gold', spots: 5 },
+              { name: 'Silver', spots: 8 },
             ].map((tier) => (
               <div key={tier.name} className="text-center">
                 <div className="text-2xl font-bold text-white mb-1">{tier.spots}</div>
