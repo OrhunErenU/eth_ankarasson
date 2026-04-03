@@ -13,7 +13,7 @@ interface TeamMember {
 
 const teamMembers: TeamMember[] = [
   {
-    name: 'Orhun Eren',
+    name: 'Team Member',
     role: 'Organizer',
     image: '',
     twitter: 'https://x.com/ethankaraxyz',
