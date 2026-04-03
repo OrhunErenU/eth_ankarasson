@@ -223,9 +223,9 @@ function HeroSection() {
           className="flex flex-wrap justify-center gap-8 md:gap-12 mt-12 md:mt-16"
         >
           {[
-            { value: '500+', label: 'Hackers' },
+            { value: 'TBA', label: 'Hackers' },
             { value: 'TBA', label: 'Prizes' },
-            { value: '20+', label: 'Speakers' },
+            { value: 'TBA', label: 'Speakers' },
             { value: '48h', label: 'Of Building' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
@@ -310,8 +310,8 @@ function HackathonSection() {
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <div className="text-2xl font-bold text-white mb-1">Yakında Duyurulacak</div>
-                <div className="text-white/50">Ödül Havuzu</div>
+                <div className="text-2xl font-bold text-white mb-1">TBA</div>
+                <div className="text-white/50"> Pool </div>
               </div>
               <div>
                 <div className="text-3xl font-bold text-white mb-1">48h</div>
