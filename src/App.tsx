@@ -141,17 +141,17 @@ function HeroSection() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#3d4852]">
+      {/* Background Image - Mobile Optimized */}
       <div className="absolute inset-0">
         <img 
           src="/hero-ankara-new.png" 
           alt="" 
-          className="w-full h-full object-cover object-center opacity-80" 
-          style={{ objectPosition: 'center 30%' }}
+          className="w-full h-full object-cover object-[center_20%] sm:object-center" 
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#3d4852]/60 via-[#3d4852]/30 to-[#3d4852]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#3d4852]/70 via-[#3d4852]/40 to-[#3d4852]" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-20 md:pt-24">
+      <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 text-center pt-20 md:pt-24 pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
