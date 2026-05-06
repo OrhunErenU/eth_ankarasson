@@ -42,7 +42,7 @@ function PageLoader({ onComplete }: { onComplete: () => void }) {
           transition={{ delay: 0.5 }}
           className="text-white/50"
         >
-          May 23-24, 2026
+          May 23, 2026
         </motion.p>
       </div>
     </motion.div>
@@ -186,7 +186,7 @@ function HeroSection() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-xl text-white/70 mb-4"
         >
-          May 23-24, 2026  Ankara, Türkiye
+          May 23, 2026  Ankara, Türkiye
         </motion.p>
 
         <motion.p
@@ -196,7 +196,7 @@ function HeroSection() {
           className="text-lg text-white/50 max-w-2xl mx-auto mb-10"
         >
           Türkiye's premier Ethereum hackathon and community gathering. 
-          Two days of building, learning, and connecting in the heart of Türkiye.
+          A day of building, learning, and connecting in the heart of Türkiye.
         </motion.p>
 
         <motion.div
@@ -226,7 +226,7 @@ function HeroSection() {
             { value: 'TBA', label: 'Hackers' },
             { value: 'TBA', label: 'Prizes' },
             { value: 'TBA', label: 'Speakers' },
-            { value: '48h', label: 'Of Building' },
+            { value: '12h', label: 'Of Building' },
           ].map((stat, i) => (
             <div key={i} className="text-center">
               <div className="text-2xl md:text-3xl font-bold text-white">{stat.value}</div>
@@ -264,8 +264,8 @@ function AboutSection() {
             Where Ethereum meets Anatolia
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-8">
-            ETH Ankara is more than a hackathon, it's a celebration of the Ethereum community in Türkiye. 
-            Join us for two days of intense building, inspiring talks, and meaningful connections.
+            ETH Ankara is more than a hackathon, it's a celebration of the Ethereum community in Türkiye.
+            Join us for a day of intense building, inspiring talks, and meaningful connections.
           </p>
           <p className="text-white/60 text-lg leading-relaxed">
             Whether you're a seasoned developer, a curious newcomer, or a blockchain enthusiast, 
@@ -304,17 +304,17 @@ function HackathonSection() {
               Build the future
             </h2>
             <p className="text-white/60 text-lg mb-8 leading-relaxed">
-              48 hours to bring your ideas to life. Smart contracts, dApps, DeFi protocols 
-              build whatever you can imagine with mentorship from industry experts.
+              12 hours to bring your ideas to life. Smart contracts, dApps, DeFi protocols
+              build whatever you can imagine with mentorship from industry experts. In-person event.
             </p>
 
             <div className="grid grid-cols-2 gap-6 mb-8">
               <div>
-                <div className="text-2xl font-bold text-white mb-1">TBA</div>
-                <div className="text-white/50"> Pool </div>
+                <div className="text-2xl font-bold text-white mb-1">$500+</div>
+                <div className="text-white/50">Prize Pool</div>
               </div>
               <div>
-                <div className="text-3xl font-bold text-white mb-1">48h</div>
+                <div className="text-3xl font-bold text-white mb-1">12h</div>
                 <div className="text-white/50">To Build</div>
               </div>
             </div>
@@ -354,7 +354,6 @@ function HackathonSection() {
 function SpeakersSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section id="speakers" ref={ref} className="relative py-24 lg:py-32 overflow-hidden bg-[#2d3748]">
@@ -387,23 +386,8 @@ function SpeakersSection() {
             ))}
           </div>
 
-          <button onClick={() => setDialogOpen(true)} 
-            className="px-8 py-3.5 border border-white/30 text-white font-medium rounded-md hover:bg-white/10 transition-colors">
-            Suggest a Speaker
-          </button>
         </motion.div>
       </div>
-
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="bg-[#2d3748] border-0">
-          <DialogHeader>
-            <DialogTitle className="text-white">Suggest a Speaker</DialogTitle>
-            <DialogDescription className="text-white/50">
-              Speaker nominations will open soon.
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
@@ -412,7 +396,6 @@ function SpeakersSection() {
 function ScheduleSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [activeDay, setActiveDay] = useState(1);
   const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
@@ -431,26 +414,13 @@ function ScheduleSection() {
             Schedule
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-            Two days of events
+            One day of events
           </h2>
 
           <div className="flex justify-center gap-4 mb-8">
-            {[
-              { day: 1, label: 'Day 1  May 23' },
-              { day: 2, label: 'Day 2  May 24' },
-            ].map(({ day, label }) => (
-              <button
-                key={day}
-                onClick={() => setActiveDay(day)}
-                className={`px-6 py-3 rounded-md font-medium transition-all ${
-                  activeDay === day 
-                    ? 'bg-white text-[#1a202c]' 
-                    : 'bg-white/10 text-white/70 hover:bg-white/20'
-                }`}
-              >
-                {label}
-              </button>
-            ))}
+            <div className="px-6 py-3 rounded-md font-medium bg-white text-[#1a202c]">
+              May 23
+            </div>
           </div>
 
           <p className="text-white/50 mb-8">
@@ -483,7 +453,6 @@ function ScheduleSection() {
 function SponsorsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [dialogOpen, setDialogOpen] = useState(false);
 
   return (
     <section id="sponsors" ref={ref} className="relative py-24 lg:py-32 overflow-hidden bg-[#2d3748]">
@@ -520,23 +489,8 @@ function SponsorsSection() {
             ))}
           </div>
 
-          <button onClick={() => setDialogOpen(true)} 
-            className="px-8 py-3.5 border border-white/30 text-white font-medium rounded-md hover:bg-white/10 transition-colors">
-            Become a Sponsor
-          </button>
         </motion.div>
       </div>
-
-      <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
-        <DialogContent className="bg-[#2d3748] border-0">
-          <DialogHeader>
-            <DialogTitle className="text-white">Sponsorship</DialogTitle>
-            <DialogDescription className="text-white/50">
-              Contact us at blockchain@tedu.edu.tr
-            </DialogDescription>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
     </section>
   );
 }
