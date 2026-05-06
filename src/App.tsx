@@ -649,7 +649,7 @@ function Footer() {
               <a href="https://x.com/ethankaraxyz" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
                 Twitter / X
               </a>
-              <a href="https://t.me/ethankara" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
+              <a href="https://t.me/+GiFxmZ-UC2UyYzA8" target="_blank" rel="noopener noreferrer" className="block text-white/50 hover:text-cyan-400 transition-colors">
                 Telegram
               </a>
             </div>
