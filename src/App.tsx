@@ -569,10 +569,14 @@ function TicketsSection() {
           </p>
 
           <div className="flex flex-col items-center gap-4 justify-center">
-            <div className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 text-white/70 font-medium rounded-md">
-              <Clock size={18} />
-              Bilet satışları yakında duyurulacak
-            </div>
+            <a
+              href="https://luma.com/event/evt-LpS1vLKvc9DgYfH"
+              className="luma-checkout--button inline-flex items-center gap-2 px-8 py-3.5 bg-white text-[#4a5568] font-medium rounded-md hover:bg-white/90 transition-colors"
+              data-luma-action="checkout"
+              data-luma-event-id="evt-LpS1vLKvc9DgYfH"
+            >
+              Register for Event
+            </a>
           </div>
         </motion.div>
       </div>
