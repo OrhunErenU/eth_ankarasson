@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hackathon Ön Başvuru | TEDÜ Blockchain Topluluğu</title>
+<meta name="description" content="Lizbon ve Münih hackathonları için TEDÜ Blockchain Topluluğu ön başvuru formu.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#F5F5F2">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Hackathon Ön Başvuru | TEDÜ Blockchain Topluluğu">
+<meta property="og:description" content="Lizbon (25–26 Ekim) ve Münih (30–31 Ekim) hackathonları için takım kuruyoruz.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --ground:#F5F5F2; --ink:#0E0E12; --red:#D50D0D; --red-dark:#A80A0A; --paper:#FFFFFF; --muted:#55555C;
+  --sans:Archivo,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5}
+.wrap{max-width:680px;margin:0 auto;padding:28px 20px 56px}
+.cond{font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:900;line-height:.95;letter-spacing:-.01em}
+.mono{font-family:var(--mono);font-size:14px;font-weight:600;letter-spacing:.09em;text-transform:none}
+
+.top{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand svg{width:30px;height:58px;flex:none}
+.brand b{font-size:19px;font-weight:800;line-height:1.15}
+.rule{height:3px;background:var(--ink);margin:16px 0 0}
+.rule.thin{height:2px}
+
+h1{margin:22px 0 0;font-size:clamp(64px,19vw,128px);line-height:1.02}
+.lead{margin:12px 0 0;font-size:19px;font-weight:600;line-height:1.4;max-width:34em}
+
+.events{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px;margin-top:24px}
+.event{background:var(--paper);border:2px solid var(--ink);padding:16px 16px 18px;display:flex;flex-direction:column;gap:6px}
+.tag{align-self:flex-start;background:var(--red);color:#fff;padding:3px 9px;font-family:var(--mono);font-size:15px;font-weight:600;letter-spacing:.04em}
+.city{font-size:72px;margin-top:12px}
+.event b{font-size:18px;font-weight:800;line-height:1.25}
+.event span{font-size:16px;font-weight:500}
+.prize{color:var(--red);font-weight:800}
+
+.how{margin-top:28px}
+.how ol{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.how li{display:flex;gap:14px;align-items:baseline;font-weight:500}
+.how li i{font-style:normal;font-family:var(--mono);font-weight:600;color:var(--red);flex:none}
+.warn{margin-top:16px;padding:14px 16px;background:var(--ink);color:#fff;font-weight:700;font-size:18px;line-height:1.35}
+
+form{margin-top:36px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.sec{margin-top:34px}
+.sec:first-child{margin-top:0}
+.sec-h{display:flex;align-items:baseline;gap:12px;padding-bottom:10px;border-bottom:3px solid var(--ink)}
+.sec-h i{font-style:normal;font-family:var(--mono);font-weight:600;color:var(--red)}
+.sec-h h2{margin:0;font-size:30px;font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:900;line-height:1;letter-spacing:0}
+.field{margin-top:20px}
+.field>label,.field>legend{display:block;padding:0;font-weight:700;font-size:17px;line-height:1.35}
+.hint{display:block;margin-top:3px;font-size:15px;font-weight:500;color:var(--muted);line-height:1.4}
+.opt{font-weight:500;color:var(--muted)}
+input[type=text],input[type=tel],input[type=email],textarea{
+  display:block;width:100%;margin-top:8px;padding:12px 14px;min-height:50px;
+  font:500 17px/1.4 var(--sans);color:var(--ink);background:var(--paper);
+  border:2px solid var(--ink);border-radius:0;-webkit-appearance:none;appearance:none}
+textarea{min-height:112px;resize:vertical}
+input:focus-visible,textarea:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.choices{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.choice{position:relative;display:flex;align-items:center;gap:12px;min-height:50px;padding:10px 14px;background:var(--paper);border:2px solid var(--ink);font-weight:600;font-size:16px;line-height:1.35;cursor:pointer}
+.choice input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.choice .box{flex:none;width:20px;height:20px;border:2px solid var(--ink);background:var(--paper);display:flex;align-items:center;justify-content:center}
+.choice.radio .box{border-radius:50%}
+.choice .box::after{content:"";width:10px;height:10px;background:var(--red);transform:scale(0);transition:transform .12s ease}
+.choice.radio .box::after{border-radius:50%}
+.choice:has(input:checked){background:var(--ink);color:#fff}
+.choice:has(input:checked) .box{border-color:#fff}
+.choice:has(input:checked) .box::after{transform:scale(1)}
+.choice:has(input:focus-visible){outline:3px solid var(--red);outline-offset:2px}
+.choice small{display:block;font-size:14px;font-weight:500;opacity:.8}
+.err{display:none;margin-top:8px;font-size:15px;font-weight:700;color:var(--red-dark)}
+.field.bad .err{display:block}
+.field.bad input[type=text],.field.bad input[type=tel],.field.bad input[type=email],.field.bad textarea{border-color:var(--red)}
+.field.bad .choice{border-color:var(--red)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+.submit{margin-top:34px}
+button.send{display:block;width:100%;min-height:62px;padding:14px 18px;border:0;border-radius:0;background:var(--red);color:#fff;font-family:var(--sans);font-size:30px;font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:900;letter-spacing:.01em;cursor:pointer}
+button.send:hover{background:var(--red-dark)}
+button.send:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+button.send[disabled]{background:var(--muted);cursor:progress}
+.formerr{display:none;margin-top:12px;padding:12px 14px;border:2px solid var(--red);background:var(--paper);font-weight:700;color:var(--red-dark)}
+.formerr.on{display:block}
+.legal{margin-top:16px;font-size:14px;line-height:1.5;color:var(--muted)}
+
+.done{display:none;margin-top:28px;background:var(--red);color:#fff;padding:28px 22px 30px}
+.done h2{margin:0;font-size:clamp(48px,13vw,84px)}
+.done p{margin:14px 0 0;font-size:18px;font-weight:600;line-height:1.45}
+.wa{display:inline-flex;align-items:center;justify-content:center;min-height:56px;margin-top:22px;padding:12px 22px;background:#fff;color:var(--ink);font-weight:800;font-size:19px;text-decoration:none}
+.wa:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.again{display:inline-block;margin-top:18px;background:none;border:0;padding:8px 0;color:#fff;font:600 15px/1.4 var(--sans);text-decoration:underline;cursor:pointer}
+body.sent form,body.sent .how,body.sent .events{display:none}
+body.sent .done{display:block}
+
+footer{margin-top:44px;padding-top:16px;border-top:2px solid var(--ink);font-family:var(--mono);font-size:14px;font-weight:500;display:flex;flex-wrap:wrap;gap:6px 18px}
+footer a{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.choice .box::after{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="brand">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 467 902" role="img" aria-label="TEDÜ Blockchain Topluluğu logosu"><path fill="#D50D0D" fill-rule="evenodd" d="M218,8 108,72 154,134 15,235 9,242 122,401 156,378 159,374 72,250 219,143 175,86 207,67 274,151 127,263 246,421 342,335 308,288 345,258 399,328 339,390 372,422 459,332 353,193 246,279 281,328 253,354 190,271 338,160Z"/><path fill="#0E0E12" fill-rule="evenodd" d="M42,590 42,712 43,713 43,724 44,725 46,742 54,769 69,800 86,824 111,849 140,869 166,881 188,888 209,892 251,893 252,892 260,892 285,887 313,877 329,869 353,853 366,842 383,824 403,795 411,779 420,754 426,724 426,714 427,713 427,590 344,590 344,714 343,715 342,726 337,742 330,756 321,769 309,782 295,793 268,806 256,809 240,810 239,811 213,809 193,803 179,796 159,781 148,769 139,756 131,739 127,726 126,715 125,714 125,590ZM42,442 42,528 188,528 189,529 189,694 190,695 190,703 192,710 198,721 208,731 215,735 224,738 239,739 240,738 245,738 257,733 267,725 273,717 277,708 279,698 279,529 280,528 427,528 427,442Z"/></svg>
+    <b>TEDÜ Blockchain<br>Topluluğu</b>
+  </div>
+  <div class="mono">EKİM 2026</div>
+</header>
+<div class="rule"></div>
+
+<h1 class="cond">HACKATHON ÖN BAŞVURU</h1>
+<p class="lead">Lizbon ve Münih'teki iki hackathon için takım kuruyoruz. Gelmek istiyorsan formu doldur.</p>
+
+<section class="events" aria-label="Hackathonlar">
+  <div class="event">
+    <div class="tag">25–26 EKİM 2026</div>
+    <div class="city cond">LİZBON</div>
+    <b>HackMeridian 2026</b>
+    <span>Stellar üzerinde iki günlük hackathon</span>
+    <span class="prize">30.000 $'a kadar ödül</span>
+  </div>
+  <div class="event">
+    <div class="tag">30–31 EKİM 2026</div>
+    <div class="city cond">MÜNİH</div>
+    <b>TUM Blockchain &amp; AI Hackathon</b>
+    <span>Blockchain ve yapay zekâ, 30 saatlik sprint</span>
+    <span class="prize">10.000 € ödül havuzu</span>
+  </div>
+</section>
+
+<section class="how">
+  <div class="mono">NASIL İŞLİYOR</div>
+  <ol>
+    <li><i>01</i><span>Bu formu dolduruyorsun.</span></li>
+    <li><i>02</i><span>Takımları formu dolduranlar arasından biz seçiyoruz.</span></li>
+    <li><i>03</i><span>Hackathon başvurusunu ve seyahat desteği başvurusunu seçilenlerle birlikte, toplu olarak yapıyoruz.</span></li>
+  </ol>
+  <div class="warn">Hackathona kendi başına başvurma. Başvuruyu birlikte yapacağız.</div>
+</section>
+
+<form id="f" novalidate>
+  <section class="sec">
+    <div class="sec-h"><i>01</i><h2>SEN</h2></div>
+    <div class="field" data-f="ad_soyad">
+      <label for="ad_soyad">Ad Soyad</label>
+      <input id="ad_soyad" name="ad_soyad" type="text" autocomplete="name" maxlength="120" required>
+      <div class="err">Adını ve soyadını yaz.</div>
+    </div>
+    <div class="field" data-f="bolum_sinif">
+      <label for="bolum_sinif">Bölüm ve sınıf</label>
+      <input id="bolum_sinif" name="bolum_sinif" type="text" maxlength="120" placeholder="Örn. Bilgisayar Mühendisliği, 2. sınıf" required>
+      <div class="err">Bölümünü ve sınıfını yaz.</div>
+    </div>
+    <div class="field" data-f="telefon">
+      <label for="telefon">Telefon (WhatsApp)</label>
+      <input id="telefon" name="telefon" type="tel" inputmode="tel" autocomplete="tel" maxlength="25" placeholder="05xx xxx xx xx" required>
+      <div class="err">Geçerli bir telefon numarası yaz.</div>
+    </div>
+    <div class="field" data-f="eposta">
+      <label for="eposta">E-posta <span class="opt">(isteğe bağlı)</span></label>
+      <input id="eposta" name="eposta" type="email" inputmode="email" autocomplete="email" maxlength="160">
+      <div class="err">E-posta adresi geçerli görünmüyor.</div>
+    </div>
+    <div class="hp" aria-hidden="true">
+      <label for="website">Bu alanı boş bırak</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><i>02</i><h2>SEYAHAT</h2></div>
+    <fieldset class="field" data-f="vize">
+      <legend>Geçerli Schengen vizen ya da yeşil pasaportun var mı?</legend>
+      <div class="choices">
+        <label class="choice radio"><input type="radio" name="vize" value="schengen"><span class="box"></span><span>Schengen vizem var</span></label>
+        <label class="choice radio"><input type="radio" name="vize" value="yesil_pasaport"><span class="box"></span><span>Yeşil pasaportum var</span></label>
+        <label class="choice radio"><input type="radio" name="vize" value="bekliyor"><span class="box"></span><span>Başvurdum, bekliyorum</span></label>
+        <label class="choice radio"><input type="radio" name="vize" value="yok"><span class="box"></span><span>Yok</span></label>
+      </div>
+      <div class="err">Birini seç.</div>
+    </fieldset>
+    <fieldset class="field" data-f="hackathonlar">
+      <legend>Hangi hackathona gelmek istersin?<span class="hint">Birden fazla seçebilirsin.</span></legend>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="hackathonlar" value="lizbon"><span class="box"></span><span>Lizbon<small>HackMeridian, 25–26 Ekim</small></span></label>
+        <label class="choice"><input type="checkbox" name="hackathonlar" value="munih"><span class="box"></span><span>Münih<small>TUM Blockchain &amp; AI Hackathon, 30–31 Ekim</small></span></label>
+        <label class="choice"><input type="checkbox" name="hackathonlar" value="sonraki"><span class="box"></span><span>Şimdilik hiçbiri<small>Sonraki hackathonlardan haber verin</small></span></label>
+      </div>
+      <div class="err">En az birini seç.</div>
+    </fieldset>
+    <fieldset class="field" data-f="destek_cikmazsa">
+      <legend>Seyahat desteği çıkmazsa katılabilir misin?<span class="hint">Seyahat desteği garanti değil, organizatör seçtiği katılımcılara veriyor.</span></legend>
+      <div class="choices">
+        <label class="choice radio"><input type="radio" name="destek_cikmazsa" value="kendim_karsilarim"><span class="box"></span><span>Evet, masrafımı kendim karşılarım</span></label>
+        <label class="choice radio"><input type="radio" name="destek_cikmazsa" value="sadece_destekle"><span class="box"></span><span>Hayır, yalnızca destek çıkarsa</span></label>
+      </div>
+      <div class="err">Birini seç.</div>
+    </fieldset>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><i>03</i><h2>TAKIM</h2></div>
+    <fieldset class="field" data-f="roller">
+      <legend>Takımda ne yapabilirsin?<span class="hint">Birden fazla seçebilirsin. Kod bilmek şart değil.</span></legend>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="roller" value="kod"><span class="box"></span><span>Kod yazarım</span></label>
+        <label class="choice"><input type="checkbox" name="roller" value="tasarim"><span class="box"></span><span>Tasarım yaparım</span></label>
+        <label class="choice"><input type="checkbox" name="roller" value="sunum"><span class="box"></span><span>Sunum ve anlatım</span></label>
+        <label class="choice"><input type="checkbox" name="roller" value="fikir"><span class="box"></span><span>Proje fikri ve iş tarafı</span></label>
+        <label class="choice"><input type="checkbox" name="roller" value="ogrenmek"><span class="box"></span><span>Henüz emin değilim, öğrenmek istiyorum</span></label>
+      </div>
+      <div class="err">En az birini seç.</div>
+    </fieldset>
+    <fieldset class="field" data-f="deneyim">
+      <legend>Daha önce hackathona katıldın mı?</legend>
+      <div class="choices">
+        <label class="choice radio"><input type="radio" name="deneyim" value="evet"><span class="box"></span><span>Evet</span></label>
+        <label class="choice radio"><input type="radio" name="deneyim" value="hayir"><span class="box"></span><span>Hayır</span></label>
+      </div>
+      <div class="err">Birini seç.</div>
+    </fieldset>
+    <div class="field" data-f="neden">
+      <label for="neden">Neden katılmak istiyorsun?<span class="hint">2-3 cümle yeter.</span></label>
+      <textarea id="neden" name="neden" maxlength="1500" required></textarea>
+      <div class="err">Birkaç cümleyle yaz (en az 10 karakter).</div>
+    </div>
+    <div class="field" data-f="ek_not">
+      <label for="ek_not">Eklemek istediğin bir şey var mı? <span class="opt">(isteğe bağlı)</span></label>
+      <textarea id="ek_not" name="ek_not" maxlength="1500"></textarea>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><i>04</i><h2>ONAY</h2></div>
+    <fieldset class="field" data-f="onay">
+      <legend class="hp">Onay</legend>
+      <div class="choices">
+        <label class="choice"><input type="checkbox" name="onay" value="1"><span class="box"></span><span>Hackathona kendi başıma başvurmayacağım, başvuruyu toplulukla birlikte yapacağım.</span></label>
+      </div>
+      <div class="err">Devam etmek için bunu onayla.</div>
+    </fieldset>
+  </section>
+
+  <div class="submit">
+    <button class="send" type="submit" id="send">ÖN BAŞVURUYU GÖNDER</button>
+    <div class="formerr" id="formerr" role="alert"></div>
+    <p class="legal">Bilgilerin yalnızca takım kurmak ve seninle iletişime geçmek için TEDÜ Blockchain Topluluğu yönetimi tarafından kullanılır, başka kimseyle paylaşılmaz. Bu form hackathon başvurusu değildir.</p>
+  </div>
+</form>
+
+<section class="done" id="done" aria-live="polite" tabindex="-1">
+  <h2 class="cond">ÖN BAŞVURUN ALINDI</h2>
+  <p>Seçilenlere WhatsApp üzerinden haber vereceğiz. Hackathona kendi başına başvurma, başvuruyu birlikte yapacağız.</p>
+  <a class="wa" href="https://chat.whatsapp.com/IhpmJAEMx8P7GkgXsTbhWp?mode=gi_t" target="_blank" rel="noopener">WhatsApp grubuna katıl</a><br>
+  <button class="again" type="button" id="again">Başka biri için yeni form doldur</button>
+</section>
+
+<footer>
+  <a href="https://instagram.com/tedublockchain" target="_blank" rel="noopener">@tedublockchain</a>
+  <a href="https://linktr.ee/tedublockchain" target="_blank" rel="noopener">linktr.ee/tedublockchain</a>
+</footer>
+
+</div>
+<script>
+(function () {
+  var API = 'https://qrzytgzebkeifhkrwojp.supabase.co/rest/v1/hackathon_on_basvuru';
+  var KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFyenl0Z3plYmtlaWZoa3J3b2pwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMxNjM2ODAsImV4cCI6MjA5ODczOTY4MH0.Pk9El5w5HhQRZ9SbMdt26dgwyHq26XUDHIaHG7uNdps';
+  var FLAG = 'tedu-hackathon-on-basvuru-2026-10';
+  var form = document.getElementById('f');
+  var send = document.getElementById('send');
+  var formerr = document.getElementById('formerr');
+  var done = document.getElementById('done');
+
+  function field(name) { return form.querySelector('[data-f="' + name + '"]'); }
+  function text(name) { return (form.elements[name].value || '').trim(); }
+  function picked(name) {
+    return Array.prototype.slice.call(form.querySelectorAll('input[name="' + name + '"]:checked')).map(function (i) { return i.value; });
+  }
+  function mark(name, bad) { field(name).classList.toggle('bad', !!bad); return !bad; }
+  function showDone() {
+    document.body.classList.add('sent');
+    window.scrollTo(0, 0);
+    try { done.focus({ preventScroll: true }); } catch (e) {}
+  }
+
+  try { if (localStorage.getItem(FLAG)) document.body.classList.add('sent'); } catch (e) {}
+
+  form.addEventListener('input', function (e) {
+    var f = e.target.closest ? e.target.closest('.field') : null;
+    if (f) f.classList.remove('bad');
+  });
+  form.addEventListener('change', function (e) {
+    var f = e.target.closest ? e.target.closest('.field') : null;
+    if (f) f.classList.remove('bad');
+  });
+
+  document.getElementById('again').addEventListener('click', function () {
+    try { localStorage.removeItem(FLAG); } catch (e) {}
+    form.reset();
+    document.body.classList.remove('sent');
+    window.scrollTo(0, 0);
+  });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    formerr.classList.remove('on');
+
+    var telefon = text('telefon');
+    var digits = telefon.replace(/\D/g, '');
+    var eposta = text('eposta');
+    var d = {
+      ad_soyad: text('ad_soyad'),
+      bolum_sinif: text('bolum_sinif'),
+      telefon: telefon,
+      eposta: eposta || null,
+      vize: picked('vize')[0] || null,
+      hackathonlar: picked('hackathonlar'),
+      roller: picked('roller'),
+      deneyim: picked('deneyim')[0] || null,
+      neden: text('neden'),
+      destek_cikmazsa: picked('destek_cikmazsa')[0] || null,
+      onay: picked('onay').length === 1,
+      ek_not: text('ek_not') || null
+    };
+
+    var ok = [
+      mark('ad_soyad', d.ad_soyad.length < 3),
+      mark('bolum_sinif', d.bolum_sinif.length < 2),
+      mark('telefon', digits.length < 10 || digits.length > 15),
+      mark('eposta', eposta && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(eposta)),
+      mark('vize', !d.vize),
+      mark('hackathonlar', d.hackathonlar.length === 0),
+      mark('destek_cikmazsa', !d.destek_cikmazsa),
+      mark('roller', d.roller.length === 0),
+      mark('deneyim', !d.deneyim),
+      mark('neden', d.neden.length < 10),
+      mark('onay', !d.onay)
+    ].every(Boolean);
+
+    if (!ok) {
+      var first = form.querySelector('.field.bad');
+      if (first) {
+        first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        var inp = first.querySelector('input,textarea');
+        if (inp) { try { inp.focus({ preventScroll: true }); } catch (err) {} }
+      }
+      return;
+    }
+
+    d.deneyim = d.deneyim === 'evet';
+
+    if (text('website')) { showDone(); return; }
+
+    send.disabled = true;
+    send.textContent = 'GÖNDERİLİYOR…';
+
+    fetch(API, {
+      method: 'POST',
+      headers: {
+        'apikey': KEY,
+        'Authorization': 'Bearer ' + KEY,
+        'Content-Type': 'application/json',
+        'Prefer': 'return=minimal'
+      },
+      body: JSON.stringify(d)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      try { localStorage.setItem(FLAG, '1'); } catch (e) {}
+      showDone();
+    }).catch(function (err) {
+      formerr.textContent = 'Gönderilemedi. İnternet bağlantını kontrol edip tekrar dene. Yazdıkların silinmedi. (' + (err && err.message ? err.message : 'ağ hatası') + ')';
+      formerr.classList.add('on');
+    }).then(function () {
+      send.disabled = false;
+      send.textContent = 'ÖN BAŞVURUYU GÖNDER';
+    });
+  });
+})();
+</script>
+</body>
+</html>
