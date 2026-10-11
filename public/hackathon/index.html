@@ -49,6 +49,10 @@ h1{margin:22px 0 0;font-size:clamp(64px,19vw,128px);line-height:1.02}
 .how li{display:flex;gap:14px;align-items:baseline;font-weight:500}
 .how li i{font-style:normal;font-family:var(--mono);font-weight:600;color:var(--red);flex:none}
 .warn{margin-top:16px;padding:14px 16px;background:var(--ink);color:#fff;font-weight:700;font-size:18px;line-height:1.35}
+.join{display:flex;align-items:center;justify-content:center;text-align:center;min-height:54px;margin-top:14px;padding:12px 18px;border:2px solid var(--ink);background:var(--paper);color:var(--ink);font-weight:800;font-size:18px;line-height:1.3;text-decoration:none}
+.join:hover{background:var(--ink);color:#fff}
+.join:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+.joinnote{margin:8px 0 0;font-size:15px;font-weight:500;line-height:1.4;color:var(--muted)}
 
 form{margin-top:36px}
 fieldset{border:0;margin:0;padding:0;min-width:0}
@@ -148,6 +152,8 @@ footer a{color:var(--ink)}
     <li><i>03</i><span>Hackathon başvurusunu ve seyahat desteği başvurusunu seçilenlerle birlikte, toplu olarak yapıyoruz.</span></li>
   </ol>
   <div class="warn">Hackathona kendi başına başvurma. Başvuruyu birlikte yapacağız.</div>
+  <a class="join" href="https://chat.whatsapp.com/IhpmJAEMx8P7GkgXsTbhWp?mode=gi_t" target="_blank" rel="noopener">WhatsApp grubuna katıl</a>
+  <p class="joinnote">Hackathon duyuruları bu grupta. Formu doldurmadan da katılabilirsin.</p>
 </section>
 
 <form id="f" novalidate>
@@ -169,8 +175,8 @@ footer a{color:var(--ink)}
       <div class="err">Geçerli bir telefon numarası yaz.</div>
     </div>
     <div class="field" data-f="eposta">
-      <label for="eposta">E-posta <span class="opt">(isteğe bağlı)</span></label>
-      <input id="eposta" name="eposta" type="email" inputmode="email" autocomplete="email" maxlength="160">
+      <label for="eposta">TEDÜ e-posta <span class="opt">(isteğe bağlı)</span></label>
+      <input id="eposta" name="eposta" type="email" inputmode="email" autocomplete="email" maxlength="160" placeholder="ornek@tedu.edu.tr">
       <div class="err">E-posta adresi geçerli görünmüyor.</div>
     </div>
     <div class="hp" aria-hidden="true">
@@ -231,11 +237,6 @@ footer a{color:var(--ink)}
       </div>
       <div class="err">Birini seç.</div>
     </fieldset>
-    <div class="field" data-f="neden">
-      <label for="neden">Neden katılmak istiyorsun?<span class="hint">2-3 cümle yeter.</span></label>
-      <textarea id="neden" name="neden" maxlength="1500" required></textarea>
-      <div class="err">Birkaç cümleyle yaz (en az 10 karakter).</div>
-    </div>
     <div class="field" data-f="ek_not">
       <label for="ek_not">Eklemek istediğin bir şey var mı? <span class="opt">(isteğe bağlı)</span></label>
       <textarea id="ek_not" name="ek_not" maxlength="1500"></textarea>
@@ -329,7 +330,6 @@ footer a{color:var(--ink)}
       hackathonlar: picked('hackathonlar'),
       roller: picked('roller'),
       deneyim: picked('deneyim')[0] || null,
-      neden: text('neden'),
       destek_cikmazsa: picked('destek_cikmazsa')[0] || null,
       onay: picked('onay').length === 1,
       ek_not: text('ek_not') || null
@@ -345,7 +345,6 @@ footer a{color:var(--ink)}
       mark('destek_cikmazsa', !d.destek_cikmazsa),
       mark('roller', d.roller.length === 0),
       mark('deneyim', !d.deneyim),
-      mark('neden', d.neden.length < 10),
       mark('onay', !d.onay)
     ].every(Boolean);
 
